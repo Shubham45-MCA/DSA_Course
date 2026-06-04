@@ -19,24 +19,28 @@ public class Tree1{
         a.left=b;a.right=c;
         b.left=d;b.right=e;
         c.left=f;c.right=g;
-        display(a);
+        displayPreorder(a);
+        System.err.println();
+        displayInorder(a);
+        System.out.println();
+        displayPostorder(a);
     }
     public static void displayPreorder(Node root){
         if(root==null) return;
         System.out.print(root.val+"  ");
-        display(root.left);
-        display(root.right);
+        displayPreorder(root.left);
+        displayPreorder(root.right);
     }
     public static void displayInorder(Node root){
         if(root==null) return;
-        display(root.left);
+        displayInorder(root.left);
         System.out.print(root.val+"  ");
-        display(root.right);
+        displayInorder(root.right);
     }
     public static void displayPostorder(Node root){
         if(root==null) return;
-        display(root.left);
-        display(root.right);
+        displayPostorder(root.left);
+        displayPostorder(root.right);
         System.out.print(root.val+"  ");
     }
 }
